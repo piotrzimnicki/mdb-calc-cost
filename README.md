@@ -22,3 +22,7 @@ Technologies used:
 - table filters - name/description/category/price
 - summary
 - localstorage support
+
+### Live
+
+https://piotrzimnicki.github.io/mdb-calc-cost/
