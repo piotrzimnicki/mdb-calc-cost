@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mdb-calc-cost/static/css/main.38115af2.css",
+    "main.js": "/mdb-calc-cost/static/js/main.ba7e4ad3.js",
+    "index.html": "/mdb-calc-cost/index.html",
+    "main.38115af2.css.map": "/mdb-calc-cost/static/css/main.38115af2.css.map",
+    "main.ba7e4ad3.js.map": "/mdb-calc-cost/static/js/main.ba7e4ad3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38115af2.css",
+    "static/js/main.ba7e4ad3.js"
+  ]
+}
