@@ -23,15 +23,22 @@ export function App() {
         setFilteredData(data.filter(el => el.cat === filterCat))
     }
     useEffect(() => {
-        setData(JSON.parse(localStorage.getItem('mdb-calc-data')))
+        if(JSON.parse(localStorage.getItem('mdb-calc-data')) && JSON.parse(localStorage.getItem('mdb-calc-data')).length > 0) {
+            setData(JSON.parse(localStorage.getItem('mdb-calc-data')))
+        }
         setFilteredData(JSON.parse(localStorage.getItem('mdb-calc-data')))
-        setUserCat( (JSON.parse(localStorage.getItem('mdb-calc-cat'))) || cat );
+        if(JSON.parse(localStorage.getItem('mdb-calc-cat')) && JSON.parse(localStorage.getItem('mdb-calc-cat')).length > 0) {
+            setUserCat( JSON.parse(localStorage.getItem('mdb-calc-cat')));
+        } else {
+            setUserCat( cat );
+        }
+
     },[])
     useEffect(() => {
         setTimeout(() => {
             localStorage.setItem('mdb-calc-data', JSON.stringify(data));
             localStorage.setItem('mdb-calc-cat', JSON.stringify(userCat));
-        },100)
+        },10)
         filterCatHandle();
     },[data,userCat])
 

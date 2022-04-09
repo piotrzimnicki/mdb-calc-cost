@@ -41,7 +41,7 @@ export const Table = props => {
     }
     function sumCounter (data) {
         let sum = 0;
-        data.map(el => sum += Number(el.price));
+        if(data) data.map(el => sum += Number(el.price));
         return sum;
     }
     function showHideSummary() {
