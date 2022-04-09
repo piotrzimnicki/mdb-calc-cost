@@ -7,6 +7,9 @@
     cursor: pointer;
 }
 
+.main-table {
+    max-width: 800px;
+}
 
 table {
     overflow-x: auto;
@@ -48,6 +51,8 @@ table tbody tr:nth-child(even) {
     overflow: hidden;
     height: 0;
     transition: .3s height;
+    min-width: 300px;
+    overflow-x: auto;
 }
 
 .accordion-arrow {
