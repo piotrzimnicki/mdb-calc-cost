@@ -1,0 +1,47 @@
+.btn-add {
+    flex: 1 1 100%;
+    background-color: forestgreen;
+    border: none;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: .3s background-color;
+    padding: 10px 0;
+    margin: 15px 0 10px 0;
+}
+.btn-add:hover {
+    background-color: darkgreen;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .message-wrapper {
+    flex: 1 1 100%;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    min-height: 31px;
+}
+form .message-wrapper .message {
+    background-color: darkred;
+    padding: 5px;
+}
+form label {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+}
+form label input,
+select{
+    padding: 5px;
+    margin-top: 10px;
+}
+
+form .cat-select-wrapper button {
+    padding: 5px;
+}

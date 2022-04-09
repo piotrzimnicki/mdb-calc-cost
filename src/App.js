@@ -1,25 +1,70 @@
-import logo from './logo.svg';
 import './App.css';
+import {Form} from "./components/Form/Form";
+import {useEffect, useState} from "react";
+import {Table} from "./components/Table/Table";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export function App() {
+    const formDefault = {
+        cat: 'podzespoły komputera',
+        name: '',
+        description: '',
+        price: 0
+    }
+    const [data, setData] = useState([]);
+    const [cat, setCat] = useState(['podzespoły komputera', 'urządzenia peryferyjne', 'oprogramowanie', 'inne']);
+    const [userCat,setUserCat] = useState([])
+    const [formData, setFormData] = useState(formDefault);
+    const [message, setMessage] = useState({})
+    const [filterCat, setFilterCat] = useState('wszystko');
+    const [filteredData, setFilteredData] = useState([])
+
+    const filterCatHandle = () => {
+        if(!userCat.includes(filterCat)) return setFilteredData(data);
+        setFilteredData(data.filter(el => el.cat === filterCat))
+    }
+    useEffect(() => {
+        setData(JSON.parse(localStorage.getItem('mdb-calc-data')))
+        setFilteredData(JSON.parse(localStorage.getItem('mdb-calc-data')))
+        setUserCat( (JSON.parse(localStorage.getItem('mdb-calc-cat'))) || cat );
+    },[])
+    useEffect(() => {
+        setTimeout(() => {
+            localStorage.setItem('mdb-calc-data', JSON.stringify(data));
+            localStorage.setItem('mdb-calc-cat', JSON.stringify(userCat));
+        },100)
+        filterCatHandle();
+    },[data,userCat])
+
+
+    return (
+        <div className="wrapper">
+            <Form
+                message={message}
+                setMessage={setMessage}
+                formData={formData}
+                setFormData={setFormData}
+                cat={cat}
+                setCat={setCat}
+                data={data}
+                setData={setData}
+                formDefault={formDefault}
+                userCat={userCat}
+                setUserCat={setUserCat}
+            />
+
+                <Table
+                    formData={formData}
+                    cat={cat}
+                    setCat={setCat}
+                    setData={setData}
+                    data={data}
+                    setMessage={setMessage}
+                    filterCat={filterCat}
+                    setFilterCat={setFilterCat}
+                    filteredData={filteredData}
+                    setFilteredData={setFilteredData}
+                    userCat={userCat}
+                />
+        </div>
+    );
 }
-
-export default App;
