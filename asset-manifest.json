@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mdb-calc-cost/static/css/main.1cbc711b.css",
-    "main.js": "/mdb-calc-cost/static/js/main.ca7c48fb.js",
+    "main.css": "/mdb-calc-cost/static/css/main.3cbe0a19.css",
+    "main.js": "/mdb-calc-cost/static/js/main.8e137715.js",
     "index.html": "/mdb-calc-cost/index.html",
-    "main.1cbc711b.css.map": "/mdb-calc-cost/static/css/main.1cbc711b.css.map",
-    "main.ca7c48fb.js.map": "/mdb-calc-cost/static/js/main.ca7c48fb.js.map"
+    "main.3cbe0a19.css.map": "/mdb-calc-cost/static/css/main.3cbe0a19.css.map",
+    "main.8e137715.js.map": "/mdb-calc-cost/static/js/main.8e137715.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cbc711b.css",
-    "static/js/main.ca7c48fb.js"
+    "static/css/main.3cbe0a19.css",
+    "static/js/main.8e137715.js"
   ]
 }
