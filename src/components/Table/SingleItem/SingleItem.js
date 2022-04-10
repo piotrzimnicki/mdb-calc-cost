@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Select} from "../../Form/Select/Select";
 import {validator} from "../../../utils/validator";
 
-export const SingleItem = ({dataSingle, index, setData, data, cat, setMessage}) => {
+export const SingleItem = ({dataSingle, index, setData, data, cat, setMessage, userCat}) => {
     const [edit, setEdit] = useState(false)
     const removeItem = () => {
         setData(data => (
@@ -45,7 +45,7 @@ export const SingleItem = ({dataSingle, index, setData, data, cat, setMessage}) 
                         </td>
                     <td>
                         <select value={dataSingle.cat} name="cat" onChange={selectHandler}>
-                        {cat.map(el => {
+                        {userCat.map(el => {
                             return <option name={el} key={el} value={el}>{el}</option>
                         })}
                         </select>

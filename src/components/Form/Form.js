@@ -26,6 +26,7 @@ export const Form = props => {
         }))
     }
     const selectHandler = e => {
+        setMessage({isMessage:false});
         setFormData(data => ({
             ...data, cat: e.target.value
         }))

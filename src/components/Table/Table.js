@@ -78,6 +78,7 @@ export const Table = props => {
                                 formData={formData}
                                 cat={cat}
                                 setCat={setCat}
+                                userCat={userCat}
                                 setData={setData}
                                 data={data}
                                 index={i}
