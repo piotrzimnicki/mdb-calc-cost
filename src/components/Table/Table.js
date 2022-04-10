@@ -37,6 +37,7 @@ export const Table = props => {
                     return (b[name].localeCompare(a[name]));
                 }
             }
+            return null;
         }))
     }
     function sumCounter (data) {
